@@ -7,6 +7,7 @@ use App\Models\Subscriber;
 use App\Scraping\ScraperFactory;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\PriceDropTelegram;
+use App\Notifications\PriceDropTelegramCustom;
 
 class PriceChecker {
     public function handle(Product $p): ?array {
@@ -37,7 +38,13 @@ class PriceChecker {
         if ($need) {
             $subscribers = Subscriber::where('is_active', true)->get();
             foreach ($subscribers as $subscriber) {
-                $subscriber->notify(new PriceDropTelegram($p, $new, $last, $pct));
+                // Eğer abonenin kendi bot token'ı varsa onu kullan
+                if ($subscriber->bot_token) {
+                    $subscriber->notify(new PriceDropTelegramCustom($p, $new, $last, $pct, $subscriber->bot_token));
+                } else {
+                    // Yoksa varsayılan bot'u kullan
+                    $subscriber->notify(new PriceDropTelegram($p, $new, $last, $pct));
+                }
             }
             return compact('new','last','pct');
         }

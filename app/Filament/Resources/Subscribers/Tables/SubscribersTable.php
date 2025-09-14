@@ -32,6 +32,19 @@ class SubscribersTable
                     ->copyable()
                     ->placeholder('Chat ID yok'),
 
+                TextColumn::make('bot_name')
+                    ->label('Bot Adı')
+                    ->searchable()
+                    ->placeholder('Bot adı yok')
+                    ->badge()
+                    ->color('info'),
+
+                TextColumn::make('bot_token')
+                    ->label('Bot Token')
+                    ->limit(20)
+                    ->placeholder('Token yok')
+                    ->copyable(),
+
                 IconColumn::make('is_active')
                     ->label('Aktif')
                     ->boolean()
