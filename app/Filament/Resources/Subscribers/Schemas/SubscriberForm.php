@@ -27,6 +27,18 @@ class SubscriberForm
                     ->helperText('Telegram kullanıcısının benzersiz chat ID\'si')
                     ->columnSpan(1),
 
+                TextInput::make('bot_token')
+                    ->label('Bot Token')
+                    ->placeholder('1234567890:ABCdefGHIjklMNOpqrsTUVwxyz')
+                    ->helperText('Bu abone için kullanılacak Telegram bot token\'ı')
+                    ->columnSpan(1),
+
+                TextInput::make('bot_name')
+                    ->label('Bot Adı')
+                    ->placeholder('Örn: FiyatBot, AsilBot')
+                    ->helperText('Bot\'un görünen adı (opsiyonel)')
+                    ->columnSpan(1),
+
                 Toggle::make('is_active')
                     ->label('Aktif')
                     ->default(true)

@@ -12,6 +12,8 @@ class Subscriber extends Model
     protected $fillable = [
         'name',
         'chat_id',
+        'bot_token',
+        'bot_name',
         'is_active',
     ];
 

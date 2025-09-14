@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Product;
 use App\Models\Subscriber;
 use App\Notifications\PriceDropTelegram;
+use App\Notifications\PriceDropTelegramCustom;
 use Illuminate\Console\Command;
 
 class TestTelegramCommand extends Command
@@ -43,8 +44,14 @@ class TestTelegramCommand extends Command
 
         foreach ($subscribers as $subscriber) {
             try {
-                $subscriber->notify(new PriceDropTelegram($product, $newPrice, $oldPrice, $dropPercent));
-                $this->info("✅ Bildirim gönderildi: {$subscriber->name} (Chat ID: {$subscriber->chat_id})");
+                // Eğer abonenin kendi bot token'ı varsa onu kullan
+                if ($subscriber->bot_token) {
+                    $subscriber->notify(new PriceDropTelegramCustom($product, $newPrice, $oldPrice, $dropPercent, $subscriber->bot_token));
+                    $this->info("✅ Özel bot ile bildirim gönderildi: {$subscriber->name} (Bot: {$subscriber->bot_name})");
+                } else {
+                    $subscriber->notify(new PriceDropTelegram($product, $newPrice, $oldPrice, $dropPercent));
+                    $this->info("✅ Varsayılan bot ile bildirim gönderildi: {$subscriber->name}");
+                }
             } catch (\Exception $e) {
                 $this->error("❌ Hata: {$subscriber->name} - {$e->getMessage()}");
             }
