@@ -1,0 +1,19 @@
+# Örnek Ürün URL'leri - Toplu Ekleme İçin
+
+# Hepsiburada Laptop'lar
+https://www.hepsiburada.com/lenovo-loq-intel-core-i5-12600hx-24gb-512gb-ssd-rtx3050-freedos-15-6-ips-tasinabilir-bilgisayar-83gs00p5tr-pm-HBC00008A3QZJ
+https://www.hepsiburada.com/asus-tuf-gaming-f15-fx506hf-hn004-intel-core-i5-11400h-16gb-512gb-ssd-rtx2050-freedos-15-6-ips-tasinabilir-bilgisayar-p-HBC00008A3QZJ
+https://www.hepsiburada.com/msi-gaming-katana-15-b12vgk-004xtr-intel-core-i5-12450h-16gb-512gb-ssd-rtx4070-freedos-15-6-ips-tasinabilir-bilgisayar-p-HBC00008A3QZJ
+
+# Teknosa Telefon'lar
+https://www.teknosa.com/iphone-15-pro-128gb-natural-titanium-p-125043001
+https://www.teknosa.com/samsung-galaxy-s24-ultra-256gb-titanium-black-p-125043002
+https://www.teknosa.com/xiaomi-14-pro-512gb-black-p-125043003
+
+# Trendyol Ev & Yaşam
+https://www.trendyol.com/siemens-iq700-wm14w8h0tr-a-1400-devir-9-kg-camasir-makinesi-p-123456789
+https://www.trendyol.com/bosch-sms46iw08tr-a-6-programli-bulasik-makinesi-p-123456790
+
+# N11 Elektronik
+https://www.n11.com/urun/sony-wh-1000xm5-kablosuz-kulaklik-123456791
+https://www.n11.com/urun/apple-airpods-pro-2-nesil-123456792
